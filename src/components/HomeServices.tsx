@@ -1,44 +1,42 @@
 import { Card } from "@/components/ui/card";
-import { Phone, MessageSquare, Headphones, Code } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Phone, MessageSquare, Headphones, Code, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export const Services = () => {
+export const HomeServices = () => {
   const services = [
     {
       icon: Headphones,
-      name: "VoiceGuard AI™",
-      tagline: "24/7 AI Voice Agent",
-      description: "Intelligent voice agents that never sleep. Handle customer inquiries, appointments, and support calls with human-like conversations powered by advanced AI.",
-      features: ["Natural conversations", "Multi-language support", "Call analytics", "CRM integration"],
+      name: "AI Voice Agent",
+      tagline: "24/7 Automated Voice Support",
+      description: "Intelligent voice agents that handle customer calls with natural conversations, never missing a beat.",
       color: "from-primary to-accent",
     },
     {
       icon: MessageSquare,
-      name: "ChatFlow Intelligence",
-      tagline: "24/7 AI Chatbot",
-      description: "Smart chatbots that understand context and intent. Provide instant responses, guide customers, and boost engagement around the clock.",
-      features: ["Contextual understanding", "Instant responses", "Lead generation", "Custom training"],
+      name: "AI Chatbot",
+      tagline: "24/7 Intelligent Chat Support",
+      description: "Smart chatbots that understand context and provide instant, accurate responses to customer queries.",
       color: "from-accent to-secondary",
     },
     {
       icon: Phone,
-      name: "TalkSync Pro",
-      tagline: "AI Customer Service Voice",
-      description: "Revolutionary AI phone system that handles customer service with empathy and efficiency. Reduce wait times and improve satisfaction scores.",
-      features: ["Empathetic responses", "Zero wait time", "Call routing", "Sentiment analysis"],
+      name: "AI Customer Service",
+      tagline: "Advanced Phone Support",
+      description: "Revolutionary AI phone system that handles customer service with empathy and efficiency.",
       color: "from-secondary to-primary",
     },
     {
       icon: Code,
-      name: "WebForge Studio",
-      tagline: "Web Development",
-      description: "Custom web solutions built with cutting-edge technology. From stunning landing pages to complex web applications, we craft digital experiences that convert.",
-      features: ["Modern tech stack", "Responsive design", "SEO optimized", "Performance focused"],
+      name: "Web Development",
+      tagline: "Custom Digital Solutions",
+      description: "Stunning websites and powerful web applications built with cutting-edge technology.",
       color: "from-primary via-accent to-secondary",
     },
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
@@ -55,12 +53,12 @@ export const Services = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Cutting-edge AI solutions designed to transform your business operations
+            AI solutions designed to transform your business operations
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -72,7 +70,7 @@ export const Services = () => {
                 {/* Gradient Background on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 space-y-4">
                   {/* Icon */}
                   <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} shadow-glow`}>
                     <Icon className="w-8 h-8 text-white" />
@@ -88,20 +86,24 @@ export const Services = () => {
                       {service.description}
                     </p>
                   </div>
-
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-2 pt-4">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color}`}></div>
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </Card>
             );
           })}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
+          <Link to="/services">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary/30 hover:bg-primary/10 text-lg px-8 py-6 backdrop-blur-sm group"
+            >
+              View All Services
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -10,14 +11,14 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center font-bold text-xl">
                 A
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
                 Axdox
               </span>
-            </div>
+            </Link>
             <p className="text-muted-foreground text-sm">
               Empowering businesses with AI-driven solutions that work 24/7 to deliver exceptional customer experiences.
             </p>
@@ -27,10 +28,10 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
-              <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Services</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -38,10 +39,10 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>VoiceGuard AI™</li>
-              <li>ChatFlow Intelligence</li>
-              <li>TalkSync Pro</li>
-              <li>WebForge Studio</li>
+              <li>AI Voice Agent</li>
+              <li>AI Chatbot</li>
+              <li>AI Customer Service</li>
+              <li>Web Development</li>
             </ul>
           </div>
 
