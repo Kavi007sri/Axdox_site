@@ -62,24 +62,11 @@ const Contact = () => {
     };
 
     try {
-  const response = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  });
-
-  if (response.ok) {
-    alert("Message sent successfully!");
-  } else {
-    const data = await response.json();
-    alert("Error: " + (data?.error || response.statusText));
-  }
-} catch (err) {
-  console.error(err);
-  alert("Something went wrong!");
-}
-
-
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       let data = null;
       const contentType = response.headers.get("content-type");
