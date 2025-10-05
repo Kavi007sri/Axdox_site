@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 // Allow frontend domain
 const FRONTEND_URL = "https://axdox-front.onrender.com";
