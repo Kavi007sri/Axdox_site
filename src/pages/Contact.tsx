@@ -62,11 +62,23 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData),
-});
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  if (response.ok) {
+    alert("Message sent successfully!");
+  } else {
+    const data = await response.json();
+    alert("Error: " + (data?.error || response.statusText));
+  }
+} catch (err) {
+  console.error(err);
+  alert("Something went wrong!");
+}
+
 
 
       let data = null;
