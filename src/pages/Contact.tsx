@@ -62,11 +62,12 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
 
       let data = null;
       const contentType = response.headers.get("content-type");
