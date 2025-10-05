@@ -31,12 +31,12 @@ const About = () => {
     {
       role: "Shri Siva - Founder",
       description: "Visionary founder driving the AI innovation and overall strategy of Axdox.",
-      image: "public/assets/siva.jpg", // Replace with actual path
+      image: "assets/siva.jpg", // Replace with actual path
     },
     {
       role: "Kavitha - Co-Founder",
       description: "Co-founder bringing expertise in AI, development, and customer engagement.",
-      image: "public/assets/kavi.jpg", // Replace with actual path
+      image: "assets/kavi.jpg", // Replace with actual path
     },
   ];
 
