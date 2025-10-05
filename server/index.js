@@ -5,15 +5,6 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-// Allow frontend domain
-const FRONTEND_URL = "https://axdox-front.onrender.com";
-
-app.use(cors({
-  origin: FRONTEND_URL,
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-
 // Handle preflight requests
 app.options('*', cors());
 
