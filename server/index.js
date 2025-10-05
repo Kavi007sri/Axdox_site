@@ -34,15 +34,15 @@ app.post('/api/contact', async (req, res) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.ZOHO_USER || 'support@axdox.in',
-        pass: process.env.ZOHO_PASS || 'axdox@2025',
+        user: 'support@axdox.in',
+        pass: 'axdox@2025',
       },
     });
 
     await transporter.sendMail({
-      from: `"${name}" <${process.env.ZOHO_USER || 'support@axdox.in'}>`,
+      from: `"${name}" <'support@axdox.in'}>`,
       replyTo: email,
-      to: process.env.ZOHO_USER || 'support@axdox.in',
+      to: 'support@axdox.in',
       subject: `Contact form submission from ${name}`,
       text:
         `Name: ${name}\n` +
