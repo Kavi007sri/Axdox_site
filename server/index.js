@@ -1,4 +1,3 @@
-// backend/index.js
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -6,17 +5,18 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configure CORS
-// Allow requests from your frontend domain in production
-const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? "https://axdox-front.onrender.com" // your deployed frontend URL
-      : "*", // allow all origins in development
-};
-app.use(cors(corsOptions));
+// Allow frontend domain
+const FRONTEND_URL = "https://axdox-front.onrender.com";
 
-// Parse JSON requests
+app.use(cors({
+  origin: FRONTEND_URL,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+// Handle preflight requests
+app.options('*', cors());
+
 app.use(express.json());
 
 app.post('/api/contact', async (req, res) => {
@@ -29,21 +29,19 @@ app.post('/api/contact', async (req, res) => {
   const name = `${firstName} ${lastName}`;
 
   try {
-    // Configure SMTP transporter
     const transporter = nodemailer.createTransport({
-      host: 'smtppro.zoho.in', // Zoho SMTP
-      port: 587,                // 465 for SSL, 587 for TLS
-      secure: false,            // true for 465, false for 587
+      host: 'smtppro.zoho.in',
+      port: 587,
+      secure: false,
       auth: {
-        user: process.env.ZOHO_USER || 'support@axdox.in',  // use env variable in production
-        pass: process.env.ZOHO_PASS || 'axdox@2025',        // app password recommended
+        user: process.env.ZOHO_USER || 'support@axdox.in',
+        pass: process.env.ZOHO_PASS || 'axdox@2025',
       },
     });
 
-    // Send email
     await transporter.sendMail({
-      from: `"${name}" <${process.env.ZOHO_USER || 'support@axdox.in'}>`, // must match authenticated email
-      replyTo: email, // user email for replies
+      from: `"${name}" <${process.env.ZOHO_USER || 'support@axdox.in'}>`,
+      replyTo: email,
       to: process.env.ZOHO_USER || 'support@axdox.in',
       subject: `Contact form submission from ${name}`,
       text:
@@ -61,12 +59,6 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Health check route
-app.get('/', (req, res) => {
-  res.send('Axdox Contact API is running!');
-});
+app.get('/', (req, res) => res.send('Axdox Backend Running!'));
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
