@@ -62,7 +62,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch("https://axdox-backend.onrender.com", {
+      const response = await fetch("https://axdox-backend.onrender.com/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
