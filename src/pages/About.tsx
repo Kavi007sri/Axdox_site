@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { Award, TrendingUp, Users, Zap, Target, Heart, Shield, Rocket } from "lucide-react";
+import { Heart, Shield, Rocket, Target } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -27,36 +27,23 @@ const About = () => {
     },
   ];
 
-  const stats = [
-    { value: "500+", label: "Happy Clients", icon: Users },
-    { value: "99.9%", label: "Uptime SLA", icon: Zap },
-    { value: "2M+", label: "Conversations", icon: TrendingUp },
-    { value: "15+", label: "Industries", icon: Award },
-  ];
-
-  const team = [
+  const founders = [
     {
-      role: "Leadership",
-      description: "Seasoned executives from Fortune 500 tech companies",
+      role: "Shri Siva - Founder",
+      description: "Visionary founder driving the AI innovation and overall strategy of Axdox.",
+      image: "/assets/siva.jpg", // Replace with actual path
     },
     {
-      role: "AI Engineers",
-      description: "PhD-level researchers pushing the boundaries of conversational AI",
-    },
-    {
-      role: "Product Team",
-      description: "UX experts crafting intuitive experiences",
-    },
-    {
-      role: "Support",
-      description: "24/7 dedicated team ensuring your success",
+      role: "Kavitha - Co-Founder",
+      description: "Co-founder bringing expertise in AI, development, and customer engagement.",
+      image: "/assets/kavi.jpg", // Replace with actual path
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Hero Section */}
@@ -68,28 +55,8 @@ const About = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              We're on a mission to make AI accessible to every business, regardless of size or technical expertise
+              After years of learning, experimenting, and completing multiple projects, Axdox officially started to bring AI solutions to businesses worldwide.
             </p>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <Card
-                  key={index}
-                  className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all hover:shadow-glow text-center animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Icon className="w-8 h-8 mx-auto mb-4 text-primary" />
-                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </Card>
-              );
-            })}
           </div>
 
           {/* Story Section */}
@@ -100,19 +67,19 @@ const About = () => {
                   Our Story
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Founded in 2020, Axdox emerged from a simple observation: businesses were struggling to keep up with customer demands while AI technology remained complex and inaccessible.
+                  Axdox officially began after years of dedication, learning, and completing multiple projects. Shri Siva, our founder, envisioned a platform that makes AI accessible to businesses of all sizes, while Kavitha, our co-founder, brought her expertise in AI development and customer engagement.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our founders, veterans of Silicon Valley's AI revolution, set out to democratize artificial intelligence. Today, we're proud to serve over 500 businesses worldwide, from startups to enterprises, helping them deliver exceptional customer experiences 24/7.
+                  Since 2023, we have been learning, experimenting, and building. Each project refined our vision and skills, leading to the creation of Axdox—the AI platform we proudly offer today.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  What started as a voice agent platform has evolved into a comprehensive AI solution suite, but our core mission remains unchanged: make powerful AI technology simple, accessible, and impactful for every business.
+                  Our mission is to simplify AI solutions, enhance customer experiences, and help businesses thrive in the digital era. We are passionate about combining innovation with practicality to deliver meaningful results for our clients.
                 </p>
               </div>
             </Card>
           </div>
 
-          {/* Values */}
+          {/* Values Section */}
           <div className="mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               <span className="text-foreground">Our </span>
@@ -144,36 +111,50 @@ const About = () => {
             </div>
           </div>
 
-          {/* Team */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              <span className="text-foreground">Meet the </span>
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Team
-              </span>
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.map((member, index) => (
-                <Card
-                  key={index}
-                  className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all hover:shadow-glow animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <h3 className="text-xl font-bold text-foreground mb-3">{member.role}</h3>
-                  <p className="text-sm text-muted-foreground">{member.description}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
+          {/* Founders Section */}
+{/* Founders Section */}
+{/* Founders Section */}
+<div className="mb-20">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+    <span className="text-foreground">Meet the </span>
+    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      Founders
+    </span>
+  </h2>
+  <div className="grid md:grid-cols-2 gap-6">
+    {founders.map((member, index) => (
+      <Card
+        key={index}
+        className="relative p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all flex flex-col items-center text-center animate-slide-up"
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        {/* Big Image with slight curve */}
+        <div className="w-full flex justify-center">
+          <img
+            src={member.image}
+            alt={member.role}
+            className="w-64 h-80 object-cover rounded-lg" // <-- slight curve here
+          />
+        </div>
 
-          {/* CTA */}
+        <h3 className="text-2xl font-bold text-foreground mt-6 mb-3">{member.role}</h3>
+        <p className="text-md text-muted-foreground max-w-xs">{member.description}</p>
+      </Card>
+    ))}
+  </div>
+</div>
+
+
+
+
+          {/* CTA Section */}
           <div className="text-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
             <div className="p-12 rounded-2xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 border border-primary/20 backdrop-blur-sm">
               <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Join Us on This Journey
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Whether you're looking to transform your customer service or explore AI opportunities, we're here to help
+                Whether you're looking to transform your customer service or explore AI opportunities, we're here to help.
               </p>
               <button className="px-8 py-4 rounded-xl bg-gradient-hero text-white font-semibold text-lg hover:opacity-90 transition-all shadow-glow hover:shadow-glow-intense">
                 Get In Touch

@@ -3,75 +3,76 @@ import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageSquare, Headphones, Code, Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
       icon: Headphones,
       name: "AI Voice Agent",
-      tagline: "24/7 Automated Voice Support",
-      description: "Deploy intelligent voice agents that handle customer calls with natural conversations. Never miss a call again with our always-on AI assistants.",
+      tagline: "24/7 Smart Voice Chat Support",
+      description:
+        "Voice assistant that lets users ask questions by speaking and get instant answers with natural AI speech.",
       features: [
-        "Natural language processing",
+        "Natural speech understanding",
         "Multi-language support",
-        "Call routing and transfer",
+        "Custom voice tones",
         "Real-time analytics",
         "CRM integration",
-        "Custom voice training"
+        "Continuous learning",
       ],
-      price: "Starting at $299/mo",
     },
     {
       icon: MessageSquare,
       name: "AI Chatbot",
-      tagline: "24/7 Intelligent Chat Support",
-      description: "Smart chatbots that understand context and provide accurate answers instantly. Engage visitors and convert them into customers automatically.",
+      tagline: "24/7 Smart Chat Support",
+      description:
+        "AI-powered chatbot that understands context and provides accurate, human-like responses in real time.",
       features: [
         "Contextual conversations",
         "Instant response time",
         "Lead capture & qualification",
         "Website integration",
         "Knowledge base training",
-        "Analytics dashboard"
+        "Analytics dashboard",
       ],
-      price: "Starting at $199/mo",
     },
     {
       icon: Phone,
       name: "AI Customer Service",
-      tagline: "Advanced Phone Support System",
-      description: "Transform your customer service with AI-powered phone systems that handle complex queries with empathy and efficiency.",
+      tagline: "AI Phone Call Support",
+      description:
+        "Call a phone number and talk to an AI that handles customer service like a real human agent.",
       features: [
         "Sentiment analysis",
         "Priority routing",
         "Call summarization",
         "Quality monitoring",
         "Integration with helpdesk",
-        "Performance reports"
+        "Performance reports",
       ],
-      price: "Starting at $399/mo",
     },
     {
       icon: Code,
       name: "Web Development",
       tagline: "Custom Digital Solutions",
-      description: "Build powerful web applications and stunning websites with modern technology. From landing pages to complex platforms.",
+      description:
+        "Modern websites and web applications built with cutting-edge technology for business growth.",
       features: [
         "Custom design & development",
         "Responsive & mobile-first",
         "SEO optimization",
         "Performance tuning",
         "Ongoing maintenance",
-        "Cloud hosting setup"
+        "Cloud hosting setup",
       ],
-      price: "Custom pricing",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Header */}
@@ -83,7 +84,7 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Comprehensive AI solutions tailored to transform your business operations and customer experience
+              AI-powered services designed to elevate your business through automation, intelligence, and innovation.
             </p>
           </div>
 
@@ -111,16 +112,17 @@ const Services = () => {
                           <p className="text-accent font-medium">{service.tagline}</p>
                         </div>
                       </div>
-                      
+
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
 
                       <div className="pt-4">
-                        <p className="text-2xl font-bold text-foreground mb-4">{service.price}</p>
+                        <Link to="/contact">
                         <Button className="bg-gradient-hero hover:opacity-90 transition-opacity">
                           Get Started
                         </Button>
+                        </Link>
                       </div>
                     </div>
 
@@ -153,11 +155,16 @@ const Services = () => {
                 Not Sure Which Service Is Right for You?
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Schedule a free consultation and we'll help you find the perfect solution for your business needs
+                Schedule a free consultation and we'll help you find the perfect solution for your business needs.
               </p>
-              <Button size="lg" className="bg-gradient-hero hover:opacity-90 transition-all text-lg px-8 py-6 shadow-glow">
+              <Link to="/contact">
+              <Button
+                size="lg"
+                className="bg-gradient-hero hover:opacity-90 transition-all text-lg px-8 py-6 shadow-glow"
+              >
                 Book Free Consultation
               </Button>
+              </Link>
             </div>
           </div>
         </div>

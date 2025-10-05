@@ -84,7 +84,7 @@ export const Navbar = () => {
               About
             </Link>
             <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-gradient-hero hover:opacity-90 transition-opacity">
+              <Button className="w-full mt-4 bg-gradient-hero hover:opacity-90 transition-opacity">
                 Contact Us
               </Button>
             </Link>

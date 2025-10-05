@@ -8,9 +8,11 @@ export const Footer = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        {/* Grid for mobile: 2 columns, sm: 2 columns, lg: 4 columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center font-bold text-xl">
                 A
@@ -19,13 +21,13 @@ export const Footer = () => {
                 Axdox
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm max-w-xs items-center text-center">
               Empowering businesses with AI-driven solutions that work 24/7 to deliver exceptional customer experiences.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center">
             <h4 className="font-semibold text-foreground">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
@@ -36,7 +38,7 @@ export const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center">
             <h4 className="font-semibold text-foreground">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>AI Voice Agent</li>
@@ -47,20 +49,20 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center">
             <h4 className="font-semibold text-foreground">Contact</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>hello@axdox.com</span>
+                <span>support@axdox.in</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 8667858467</span>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>San Francisco, CA</span>
+                <span>Erode, Tamil Nadu, India</span>
               </li>
             </ul>
           </div>
@@ -68,9 +70,11 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
-          <p>© 2024 Axdox. All rights reserved. Powered by AI Innovation.</p>
+          <p>© 2025 Axdox. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
 };
+
+export default Footer;

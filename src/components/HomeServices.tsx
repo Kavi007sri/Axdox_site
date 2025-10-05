@@ -5,35 +5,36 @@ import { Link } from "react-router-dom";
 
 export const HomeServices = () => {
   const services = [
-    {
-      icon: Headphones,
-      name: "AI Voice Agent",
-      tagline: "24/7 Automated Voice Support",
-      description: "Intelligent voice agents that handle customer calls with natural conversations, never missing a beat.",
-      color: "from-primary to-accent",
-    },
-    {
-      icon: MessageSquare,
-      name: "AI Chatbot",
-      tagline: "24/7 Intelligent Chat Support",
-      description: "Smart chatbots that understand context and provide instant, accurate responses to customer queries.",
-      color: "from-accent to-secondary",
-    },
-    {
-      icon: Phone,
-      name: "AI Customer Service",
-      tagline: "Advanced Phone Support",
-      description: "Revolutionary AI phone system that handles customer service with empathy and efficiency.",
-      color: "from-secondary to-primary",
-    },
-    {
-      icon: Code,
-      name: "Web Development",
-      tagline: "Custom Digital Solutions",
-      description: "Stunning websites and powerful web applications built with cutting-edge technology.",
-      color: "from-primary via-accent to-secondary",
-    },
-  ];
+  {
+    icon: Headphones,
+    name: "AI Voice Agent",
+    tagline: "24/7 Smart Voice chat Support",
+    description: "Voice assistant that lets users ask questions by speaking and get instant answers with natural AI speech.",
+    color: "from-primary to-accent",
+  },
+  {
+    icon: MessageSquare,
+    name: "AI Chatbot",
+    tagline: "24/7 Smart Chat Support",
+    description: "AI-powered chatbot that understands context and provides accurate, human-like responses in real time.",
+    color: "from-accent to-secondary",
+  },
+  {
+    icon: Phone,
+    name: "AI Customer Service",
+    tagline: "AI Phone Call Support",
+    description: "Call a phone number and talk to an AI that handles customer service like a real human agent.",
+    color: "from-secondary to-primary",
+  },
+  {
+    icon: Code,
+    name: "Web Development",
+    tagline: "Custom Digital Solutions",
+    description: "Modern websites and web applications built with cutting-edge technology for business growth.",
+    color: "from-primary via-accent to-secondary",
+  },
+];
+
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -60,36 +61,37 @@ export const HomeServices = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <Card
-                key={index}
-                className="group relative p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow overflow-hidden animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Gradient Background on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+  const Icon = service.icon;
+  return (
+    <Card
+      key={index}
+      className="group relative p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow overflow-hidden animate-slide-up"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      {/* Gradient Background on Hover */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
-                <div className="relative z-10 space-y-4">
-                  {/* Icon */}
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} shadow-glow`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
+      <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+        {/* Icon */}
+        <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} shadow-glow`}>
+          <Icon className="w-8 h-8 text-white" />
+        </div>
 
-                  {/* Content */}
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {service.name}
-                    </h3>
-                    <p className="text-sm text-accent font-medium">{service.tagline}</p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            );
-          })}
+        {/* Content */}
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+            {service.name}
+          </h3>
+          <p className="text-sm text-accent font-medium">{service.tagline}</p>
+          <p className="text-muted-foreground leading-relaxed">
+            {service.description}
+          </p>
+        </div>
+      </div>
+    </Card>
+  );
+})}
+
         </div>
 
         {/* View All Button */}
