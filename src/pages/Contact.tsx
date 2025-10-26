@@ -24,7 +24,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      detail: "support@axdox.in",
+      detail: "axdoxteam@zohomail.in",
       description: "We'll respond within 24 hours",
     },
     {
